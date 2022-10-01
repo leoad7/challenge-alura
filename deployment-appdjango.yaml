@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: appdjango-deployment
+  labels:
+    app: appdjango
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: appdjango
+  template:
+    metadata:
+      labels:
+        app: appdjango
+    spec:
+      containers:
+      - name: appdjango
+        image: gcr.io/devops-challenge-364001/app-django:v2
+        ports:
+        - containerPort: 8000
