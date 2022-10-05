@@ -18,7 +18,7 @@ env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: ${{ secrets.GKE_CLUSTER }}    # Add your cluster name here.
   GKE_ZONE: ${{ secrets.GKE_ZONE }}   # Add your cluster zone here.
-  DEPLOYMENT_NAME: ${{ secrets.GKE_DEPLOYMENT }} # Add your deployment name here.
+  GKE_DEPLOYMENT: ${{ secrets.GKE_DEPLOYMENT }} # Add your deployment name here.
   GKE_IMAGE: ${{ secrets.GKE_IMAGE }}
   SERVICE_ACCOUNT: ${{ secrets.GKE_SA_KEY }}
 
