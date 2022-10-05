@@ -53,12 +53,13 @@ jobs:
     # Build the Docker image
     - name: Build
       run: |-
-        docker build --tag gcr.io/${{ env.PROJECT_ID }}/${{ env.GKE_IMAGE }}:v3
+        docker build \
+        --tag "gcr.io/${{ env.PROJECT_ID }}/${{ env.GKE_IMAGE }}:v3"
 
     # Push the Docker image to Google Container Registry
     - name: Publish
       run: |-
-        docker push gcr.io/${{ env.PROJECT_ID }}/${{ env.GKE_IMAGE }}:v3
+        docker push "gcr.io/${{ env.PROJECT_ID }}/${{ env.GKE_IMAGE }}:v3"
 
     # Set up kustomize
     - name: Set up Kustomize
