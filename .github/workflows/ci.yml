@@ -69,7 +69,6 @@ jobs:
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
       run: |-
-        ./kustomize create — autodetect — recursive
         ./kustomize edit set image gcr.io/PROJECT_ID/IMAGE:TAG=gcr.io/${{ env.PROJECT_ID }}/${{ env.GKE_IMAGE }}
         ./kustomize build . | kubectl apply -f -
         kubectl rollout status deployment/${{ env.GKE_DEPLOYMENT }}
