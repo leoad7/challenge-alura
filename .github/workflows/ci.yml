@@ -71,5 +71,5 @@ jobs:
       run: |-
         ./kustomize edit set image appdjango-gke="gcr.io/${{ env.PROJECT_ID }}/${{ env.GKE_IMAGE }}:v3"
         ./kustomize build . | kubectl apply -f -
-        kubectl rollout status deployment/${{ env.GKE_DEPLOYMENT }}
+        kubectl rollout status deployment/"${{ env.GKE_DEPLOYMENT }}"
         kubectl get services -o wide
