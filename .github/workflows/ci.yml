@@ -54,7 +54,8 @@ jobs:
     - name: Build
       run: |-
         docker build \
-        --tag "gcr.io/${{ env.PROJECT_ID }}/${{ env.GKE_IMAGE }}:v3"
+        --tag app-django:v3 .
+        docker tag app-django:v3 gcr.io/${{ env.PROJECT_ID }}/${{ env.GKE_IMAGE }}:v3
 
     # Push the Docker image to Google Container Registry
     - name: Publish
